@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quartelium | Plataforma Autónoma Industrial</title>
+    <style>
+        :root {
+            --color-primary: #1a4d98; /* Azul oscuro corporativo */
+            --color-secondary: #ff7f00; /* Naranja de alerta/énfasis */
+            --color-text: #333;
+            --color-background: #f4f7f9;
+            --color-white: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+        section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .problem-section {
+            background-color: var(--color-white);
+        }
+        .solution-section {
+            background-color: var(--color-background);
+        }
+        h2 {
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: left;
+            gap: 20px;
+        }
+        .feature-item {
+            background: var(--color-white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(33% - 40px);
+            min-width: 250px;
+            box-sizing: border-box;
+        }
+        .feature-item h3 {
+            color: var(--color-secondary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cta-section {
+            background-color: var(--color-primary);
+            padding: 50px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #cc6500;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-item {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Quartelium</h1>
+            <p>La plataforma SaaS que automatiza la trazabilidad y logística de materiales en entornos Mineros, de Construcción y Energéticos.</p>
+        </div>
+    </header>
+
+    <section class="problem-section">
+        <div class="container">
+            <h2>🚨 ¿Sufre su operación de logística invisible?</h2>
+            <p>En yacimientos y grandes obras, el costo de no saber dónde está cada material es enorme. Sus principales dolores son:</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>❌ Fraude y Desvío</h3>
+                    <p>Falta de control estricto sobre la recepción de materiales de alto valor. Imposibilidad de validar la entrega física.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>⏰ Tiempos de Inactividad</h3>
+                    <p>Maquinaria crítica detenida por la demora en la entrega de repuestos o insumos. La "última milla" industrial es lenta.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📉 Riesgo y Conciliación</h3>
+                    <p>Errores en el match entre la Orden de Compra, el Remito y la Factura. Miles de horas perdidas en la conciliación administrativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution-section">
+        <div class="container">
+            <h2>🚀 Quartelium: La inteligencia que orquesta su flota</h2>
+            <p>Implemente la trazabilidad de grado militar sin reemplazar su maquinaria pesada.</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>SaaS Agnostic: Conectamos todo.</h3>
+                    <p>Plataforma basada en la nube que gestiona pedidos de materiales y asigna rutas, compatible con cualquier ERP.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Kit de Retrofit Inteligente (MVP)</h3>
+                    <p>Un dispositivo plug-and-play con GPS y cámara que se instala en minutos en cualquier vehículo o maquinaria, proporcionando telemetría en tiempo real.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Validación Digital (4 Vías)</h3>
+                    <p>Generación automática de Pruebas de Entrega (POD) validadas por ubicación. Cierre el circuito financiero: la entrega valida el pago.</p>
+                </div>
+            </div>
+            
+            <br><br>
+            <h2>El Futuro Es Ahora: Listos para Drones e IA</h2>
+            <p>Nuestra arquitectura está preparada para escalar con vehículos terrestres autónomos (AGV) y drones en entornos no regulados (minas, yacimientos).</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para transformar su logística?</h2>
+            <p style="color: var(--color-white);">Hablemos de una Prueba Piloto en su operación.</p>
+            <a href="mailto:sosamatiasl.dev@gmail.com?subject=Propuesta%20Quartelium" class="cta-button">Solicitar Demo y Propuesta</a>
+            <p style="color: #ccc; margin-top: 20px;">Dirigido a Jefaturas de Innovación, Compras y Logística.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 Quartelium. Soluciones de Telemetría y Logística para el futuro.
+        </div>
+    </footer>
+    
+</body>
+</html>
