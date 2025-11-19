@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Intelivoy para Construcción</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .slide {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            border-bottom: 1px solid #2a3440;
+            scroll-snap-align: start;
+        }
+        .container-slide {
+            max-width: 90%;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        .icon {
+            color: #f59e0b; /* Yellow/Orange for Construction Accents */
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        .feature-card {
+            background-color: #161b22;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3), 0 4px 6px -2px rgba(245, 158, 11, 0.2);
+        }
+        .cta-button {
+            background-color: #f59e0b;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #d97706;
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-container">
+
+    <!-- Diapositiva 1: Título -->
+    <section id="slide-1" class="slide bg-gray-900">
+        <div class="container-slide text-center">
+            <h1 class="text-6xl font-extrabold text-yellow-400 mb-4">Intelivoy: Logística Inteligente para la Construcción</h1>
+            <h2 class="text-4xl font-light text-gray-200 mb-8">Cero Mermas, Máximo Control en Obra.</h2>
+            <p class="text-xl text-gray-400">Integración de IA y Transferencia de Datos Dinámicos para Flotas Autónomas de Materiales.</p>
+            <div class="mt-16 text-gray-500">
+                <p>Presentado por: Matías Leonardo Sosa</p>
+                <p>Fecha: Noviembre 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diapositiva 2: El Desafío Actual (Adaptado a Construcción) -->
+    <section id="slide-2" class="slide">
+        <div class="container-slide max-w-4xl">
+            <h2 class="text-5xl mb-12 text-center text-red-400">Desafíos Logísticos en Obras de Gran Escala</h2>
+            <p class="text-2xl text-center text-gray-300 mb-12">La falta de verificación automática en origen y destino causa sobrecostos, demoras y mermas de materiales críticos.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="feature-card">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="icon mr-2">❌</span> Control de Material y Mermas</h3>
+                    <p class="text-gray-400">Desvíos, hurtos o errores en la cantidad (toneladas de áridos, unidades de cemento) en el punto de carga o en la obra.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="icon mr-2">⏳</span> Tiempos de Espera en Balanza</h3>
+                    <p class="text-gray-400">Congestión y largos tiempos de inactividad de la flota esperando documentación o validación manual de pesos en acopios/plantas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="icon mr-2">📍</span> Desconexión Carga-Obra</h3>
+                    <p class="text-gray-400">Falta de trazabilidad dinámica: se pierde la visibilidad del camión y su carga entre la planta y la obra, dificultando la planificación JIT.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="icon mr-2">🔒</span> Riesgo de Acceso No Autorizado</h3>
+                    <p class="text-gray-400">Entrada de vehículos no verificados o con cargas incorrectas a obras sensibles, generando riesgos de seguridad y cumplimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diapositiva 3: La Solución: Sistema de Logística Inteligente y Conectada -->
+    <section id="slide-3" class="slide bg-gray-800">
+        <div class="container-slide max-w-5xl">
+            <h2 class="text-5xl mb-12 text-center text-yellow-400">Intelivoy: Logística Autónoma Punto a Punto</h2>
+            <p class="text-xl text-center text-gray-300 mb-16">Un sistema integral que utiliza la Inteligencia Artificial para conciliar los datos de la mercadería con la ruta del vehículo y la confirmación del receptor, todo en tiempo real.</p>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="feature-card">
+                    <div class="text-5xl icon mb-4">⚙️</div>
+                    <h3 class="text-2xl font-semibold mb-2">Unidad de Comunicación (Hardware)</h3>
+                    <p class="text-gray-400">Módulo a bordo del vehículo que gestiona la captura y el intercambio de datos con el entorno.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="text-5xl icon mb-4">🧠</div>
+                    <h3 class="text-2xl font-semibold mb-2">API Central (La IA)</h3>
+                    <p class="text-gray-400">La capa de inteligencia que recibe, procesa, verifica y emite órdenes de tarea logísticas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="text-5xl icon mb-4">✅</div>
+                    <h3 class="text-2xl font-semibold mb-2">Protocolo de Verificación</h3>
+                    <p class="text-gray-400">Credenciales verificadas para garantizar la identidad y autorización del emisor y el receptor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diapositiva 4: Cómo Funciona la Transferencia de Datos (El Secreto Protegido) -->
+    <section id="slide-4" class="slide">
+        <div class="container-slide max-w-4xl">
+            <h2 class="text-5xl mb-12 text-center text-yellow-300">Mecanismos de Conexión Dinámica</h2>
+            <div class="feature-card border border-gray-700">
+                <div class="flex flex-col space-y-6">
+                    <div class="flex items-center p-4 border-b border-gray-700">
+                        <div class="text-3xl icon mr-4">🏷️</div>
+                        <div>
+                            <h4 class="text-xl font-bold">1. Identificación: ID No Contacto</h4>
+                            <p class="text-gray-400">Identificación instantánea y automática del material (cemento, áridos, estructura) y el punto (planta/acopio).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 border-b border-gray-700">
+                        <div class="text-3xl icon mr-4">📡</div>
+                        <div>
+                            <h4 class="text-xl font-bold">2. Transferencia: Protocolos de Red IP</h4>
+                            <p class="text-gray-400">Envío seguro de manifiestos de carga, pesos de balanza y datos de ruta a la IA del vehículo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4">
+                        <div class="text-3xl icon mr-4">🔑</div>
+                        <div>
+                            <h4 class="text-xl font-bold">3. Verificación: API con Credenciales</h4>
+                            <p class="text-gray-400">Autenticación criptográfica del camión y del capataz/ingeniero en obra antes de liberar la descarga.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm italic text-center text-gray-500 mt-8"></p>
+        </div>
+    </section>
+
+    <!-- Diapositiva 5: El Cerebro del Sistema (La IA y la API) -->
+    <section id="slide-5" class="slide bg-gray-900">
+        <div class="container-slide max-w-5xl">
+            <h2 class="text-5xl mb-12 text-center text-green-400">De Datos a Decisiones: La Potencia de la IA</h2>
+            <p class="text-xl text-center text-gray-300 mb-16">El núcleo de Intelivoy toma decisiones logísticas autónomas para optimizar cada movimiento de la flota de construcción.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card border border-green-700">
+                    <h3 class="text-2xl font-semibold mb-2">Conciliación de Peso y Material</h3>
+                    <p class="text-gray-400">Verifica automáticamente la cantidad y tipo de carga (usando datos de balanza) contra el pedido, garantizando **Cero Errores** de suministro.</p>
+                </div>
+                <div class="feature-card border border-green-700">
+                    <h3 class="text-2xl font-semibold mb-2">Ruteo Dinámico JIT (Just-in-Time)</h3>
+                    <p class="text-gray-400">Ajusta la ruta en tiempo real para coordinarse con el avance de obra o el tráfico en Mar del Plata, asegurando entregas JIT.</p>
+                </div>
+                <div class="feature-card border border-green-700">
+                    <h3 class="text-2xl font-semibold mb-2">Alerta Predictiva de Desvío</h3>
+                    <p class="text-gray-400">Identifica anomalías (camión que se desvía de la ruta aprobada) y detiene el proceso o genera una alerta inmediata al supervisor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diapositiva 6: Seguridad, Trazabilidad y Prevención de Hurtos -->
+    <section id="slide-6" class="slide">
+        <div class="container-slide max-w-4xl">
+            <h2 class="text-5xl mb-12 text-center text-yellow-400">Proof of Delivery (POD) Criptográfico</h2>
+            <p class="text-xl text-center text-gray-300 mb-12">Seguridad total en obra y acopio, eliminando el riesgo de hurtos y controlando el acceso de vehículos no autorizados.</p>
+
+            <div class="space-y-6">
+                <div class="feature-card border border-yellow-700">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="text-yellow-500 mr-2">🛡️</span> Credenciales Verificadas</h3>
+                    <p class="text-gray-400">Acceso solo a capataces/ingenieros autorizados. El camión autónomo bloquea la descarga hasta la autenticación.</p>
+                </div>
+                <div class="feature-card border border-yellow-700">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="text-yellow-500 mr-2">🛰️</span> Geolocalización Cruzada</h3>
+                    <p class="text-gray-400">Coteja que el vehículo se encuentre en el *geofence* de la obra *correcta* antes de liberar la descarga de materiales.</p>
+                </div>
+                <div class="feature-card border border-yellow-700">
+                    <h3 class="text-2xl font-semibold mb-2 flex items-center"><span class="text-yellow-500 mr-2">📘</span> Registro Inmutable</h3>
+                    <p class="text-gray-400">Cada tonelada y cada entrega queda registrada, creando una trazabilidad completa a prueba de manipulaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diapositiva 7: Propuesta de Valor y Retorno de Inversión (ROI) (Adaptado) -->
+    <section id="slide-7" class="slide bg-gray-800">
+        <div class="container-slide max-w-5xl">
+            <h2 class="text-5xl mb-12 text-center text-yellow-400">Impacto Financiero: La Inversión se Paga Sola</h2>
+            <p class="text-xl text-center text-gray-300 mb-12">Nuestro objetivo primario: Reducir las **Mermas** y el **Tiempo de Inactividad de Flota** en un **[25-30]%** durante el primer año.</p>
+
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-gray-700">
+                        <th class="p-3 text-lg font-medium text-yellow-300 rounded-tl-lg">Métrica de Valor</th>
+                        <th class="p-3 text-lg font-medium text-yellow-300 rounded-tr-lg">Impacto del Sistema Intelivoy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                        <td class="p-3">Reducción de Mermas y Desvíos</td>
+                        <td class="p-3">Conciliación de peso en origen y verificación criptográfica en destino (Cero Desvío de Cemento/Áridos).</td>
+                    </tr>
+                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                        <td class="p-3">Aceleración en Balanzas</td>
+                        <td class="p-3">Eliminación de la verificación manual de documentación, reduciendo el **Tiempo de Espera** en el acopio/planta.</td>
+                    </tr>
+                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                        <td class="p-3">Eficiencia JIT en Obra</td>
+                        <td class="p-3">La IA garantiza que los materiales lleguen en el momento exacto que la obra los necesita, evitando paralizaciones.</td>
+                    </tr>
+                    <tr class="border-b border-gray-700 hover:bg-gray-700">
+                        <td class="p-3">Trazabilidad para Certificación</td>
+                        <td class="p-3">Registro inmutable de la cadena de custodia, esencial para auditorías y certificación de proyectos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Diapositiva 8: Modelo de Negocio y CTA (Adaptado) -->
+    <section id="slide-8" class="slide bg-gray-900">
+        <div class="container-slide max-w-4xl text-center">
+            <h2 class="text-5xl mb-8 text-yellow-400">Asociación Estratégica</h2>
+
+            <div class="feature-card border border-yellow-500 mb-12">
+                <h3 class="text-3xl font-semibold mb-4">Modelo de Negocio Sugerido (SaaS)</h3>
+                <p class="text-xl text-gray-300">Construido para ser escalable y predecible en sus costos:</p>
+                <ul class="text-left mt-4 text-gray-400 space-y-2 list-disc list-inside">
+                    <li>Tarifa de Implementación Inicial: Costo único por la instalación de la Unidad de Comunicación en los primeros vehículos.</li>
+                    <li>Suscripción Mensual por Volumen: Tarifa recurrente basada en el volumen de camiones / número de transacciones gestionadas por la API.</li>
+                </ul>
+            </div>
+
+            <h3 class="text-3xl font-semibold mb-6 text-green-400">Próximos Pasos: Piloto Estratégico de 90 Días</h3>
+            <p class="text-xl text-gray-300 mb-8">Propongamos un Piloto enfocado en la gestión de Cemento o Áridos para demostrar la eliminación de mermas y la aceleración en balanzas.</p>
+
+            <a href="mailto:matias.sosa@tucorreo.com" class="cta-button inline-block text-white py-3 px-8 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl">
+                Contáctenos para Iniciar el Piloto
+            </a>
+
+            <p class="mt-8 text-gray-500">Contacto: Matías Leonardo Sosa | sosamatiasl.dev@gmail.com | +54 223 448 9065</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
