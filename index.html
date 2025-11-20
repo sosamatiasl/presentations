@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quartelium - Conciliación a 4 Vías: ROI Garantizado</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados y variables de diseño */
+        :root {
+            --color-primary: #1e3a8a; /* Azul Oscuro (Marino) */
+            --color-secondary: #fcd34d; /* Amarillo Brillante */
+            --color-accent: #3b82f6; /* Azul Claro */
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: #1f2937; /* Gris Oscuro */
+            background-color: #f9fafb;
+        }
+
+        /* Estilo para el menú de hamburguesa y la navegación móvil */
+        .hamburger-menu-icon {
+            cursor: pointer;
+            z-index: 50;
+        }
+
+            .hamburger-menu-icon span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background-color: var(--color-primary);
+                transition: all 0.3s ease-in-out;
+            }
+
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Animación para el botón de envío del formulario */
+        .submit-btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+        }
+
+        /* Estilos para el carrusel */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%; /* Cada slide ocupa el 100% del contenedor */
+            min-width: 100%;
+            padding: 1rem;
+        }
+
+        /* Efecto hover para tarjetas (Tarjetas de Beneficios) */
+        .benefit-card {
+            transition: all 0.3s ease;
+            transform: scale(1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+            .benefit-card:hover {
+                transform: scale(1.03);
+                box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.1), 0 8px 10px -6px rgba(30, 58, 138, 0.1);
+                border-left: 5px solid var(--color-secondary);
+            }
+
+        /* ========================================= */
+        /* ESTILOS DE LA ANIMACIÓN CSS (VIDEO)       */
+        /* ========================================= */
+
+        /* Wrapper para mantener la relación de aspecto 16:9 */
+        .aspect-ratio-wrapper {
+            width: 100%;
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Ratio */
+            background-color: #000;
+            border-radius: 0.75rem; /* Coincide con rounded-xl de Tailwind */
+            overflow: hidden;
+        }
+
+        /* Contenedor absoluto para las escenas */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Escenas Generales */
+        .scene {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            z-index: 0;
+            padding: 2rem;
+            animation-fill-mode: forwards;
+        }
+
+        /* Orquestación de Escenas (Tiempos) */
+        #scene-1 {
+            background-color: #450a0a;
+            animation: sequence-1 5s linear forwards;
+        }
+
+        #scene-2 {
+            background-color: #111827;
+            animation: sequence-2 7s linear 5s forwards;
+        }
+
+        #scene-3 {
+            background-color: var(--color-primary);
+            animation: sequence-3 8s linear 12s forwards;
+        }
+
+        #scene-4 {
+            background-color: var(--color-accent);
+            animation: sequence-4 12s linear 20s forwards;
+        }
+
+        #scene-5 {
+            background-color: #14532d;
+            animation: sequence-5 10s linear 32s forwards;
+        }
+
+        #scene-6 {
+            background-color: var(--color-primary);
+            animation: sequence-6 8s linear 42s forwards;
+        }
+
+        /* Keyframes de Secuencia */
+        @keyframes sequence-1 {
+            0% {
+                opacity: 1;
+                z-index: 10;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 0;
+            }
+        }
+
+        @keyframes sequence-2 {
+            0% {
+                opacity: 0;
+                z-index: 10;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 0;
+            }
+        }
+
+        @keyframes sequence-3 {
+            0% {
+                opacity: 0;
+                z-index: 10;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 0;
+            }
+        }
+
+        @keyframes sequence-4 {
+            0% {
+                opacity: 0;
+                z-index: 10;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 0;
+            }
+        }
+
+        @keyframes sequence-5 {
+            0% {
+                opacity: 0;
+                z-index: 10;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 0;
+            }
+        }
+
+        @keyframes sequence-6 {
+            0% {
+                opacity: 0;
+                z-index: 10;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                z-index: 10;
+            }
+        }
+
+        /* Animaciones Internas */
+        .fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+            transform: translate3d(0, 0, 0);
+        }
+
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        .zoom-in {
+            animation: zoomIn 1s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(252, 211, 77, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(252, 211, 77, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(252, 211, 77, 0);
+            }
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: white;
+            margin: 0.5rem 0;
+            opacity: 0;
+        }
+
+        @media (min-width: 768px) {
+            .check-item {
+                font-size: 1.5rem;
+                margin: 0.75rem 0;
+            }
+        }
+
+        .check-icon {
+            color: var(--color-secondary);
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* Retrasos */
+        .delay-1s {
+            animation-delay: 1s;
+        }
+
+        .delay-2s {
+            animation-delay: 2s;
+        }
+
+        .delay-3s {
+            animation-delay: 3s;
+        }
+
+        .delay-4s {
+            animation-delay: 4s;
+        }
+
+        /* Barra de Progreso */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: var(--color-secondary);
+            width: 0%;
+            z-index: 50;
+            animation: progress 50s linear forwards;
+        }
+
+        @keyframes progress {
+            to {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Encabezado y Navegación -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-gray-800 flex items-center">
+                <span class="text-3xl font-extrabold text-blue-800 tracking-tight">Quartelium<span class="text-yellow-500 text-3xl">.</span></span>
+            </div>
+
+            <!-- Menú de Escritorio -->
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#solucion" class="text-gray-600 hover:text-blue-700 transition duration-150">Solución</a>
+                <a href="#roi" class="text-gray-600 hover:text-blue-700 transition duration-150">Cálculo de ROI</a>
+                <a href="#beneficios" class="text-gray-600 hover:text-blue-700 transition duration-150">Beneficios</a>
+                <a href="#contacto" class="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition duration-150">Contacto</a>
+            </nav>
+
+            <!-- Menú Hamburguesa (Móvil) -->
+            <div class="md:hidden hamburger-menu-icon" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <nav id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 md:hidden z-40">
+            <div class="p-6">
+                <div class="text-2xl font-bold text-blue-800 mb-8">Quartelium.</div>
+                <a href="#solucion" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-150" onclick="toggleMobileMenu()">Solución</a>
+                <a href="#roi" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-150" onclick="toggleMobileMenu()">Cálculo de ROI</a>
+                <a href="#beneficios" class="block py-2 text-gray-600 hover:text-blue-700 transition duration-150" onclick="toggleMobileMenu()">Beneficios</a>
+                <a href="#contacto" class="block py-2 text-white bg-blue-700 rounded-lg text-center mt-4" onclick="toggleMobileMenu()">Contacto</a>
+            </div>
+        </nav>
+        <div id="mobile-overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-30" onclick="toggleMobileMenu()"></div>
+    </header>
+
+    <main>
+        <!-- 2. Sección Principal (Hero) -->
+        <section id="solucion" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Propuesta de Valor -->
+                <div>
+                    <span class="text-sm font-semibold uppercase text-blue-600 tracking-wider">Logística 4.0</span>
+                    <h1 class="mt-2 text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                        Conciliación a <span class="text-yellow-500">4 Vías</span>. El fin de la Discrepancia.
+                    </h1>
+                    <p class="mt-4 text-xl text-gray-600">
+                        Quartelium automatiza la cadena de valor completa, desde la Orden de Compra (OC) hasta el Pago final. Utilice nuestro Kit de Retrofit IoT para convertir sus camiones en activos de datos verificados.
+                    </p>
+                    <div class="mt-8 flex gap-4">
+                        <a href="#roi" class="px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg shadow-xl submit-btn-hover">
+                            Calcular mi Ahorro
+                        </a>
+                        <a href="#contacto" class="px-6 py-3 bg-white text-blue-700 border border-blue-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-150">
+                            Ver Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video (Animación CSS Integrada) -->
+                <!-- Se mantiene el contenedor exterior para el hover y sombra originales -->
+                <div class="shadow-2xl rounded-xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-300 w-full">
+                    <div class="aspect-ratio-wrapper">
+                        <div class="video-container">
+
+                            <!-- ESCENA 1: EL PROBLEMA -->
+                            <div id="scene-1" class="scene">
+                                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 fade-up">¿El 15% de sus costos<br>logísticos <span class="text-red-400">se esfuma?</span></h2>
+                            </div>
+
+                            <!-- ESCENA 2: EL DOLOR -->
+                            <div id="scene-2" class="scene">
+                                <h2 class="text-4xl md:text-6xl font-black text-red-500 mb-8 fade-up shake">DISPUTAS.</h2>
+                                <h2 class="text-4xl md:text-6xl font-black text-red-500 mb-8 fade-up shake delay-1s">RETRASOS.</h2>
+                                <h2 class="text-4xl md:text-6xl font-black text-white fade-up delay-2s">PÉRDIDAS.</h2>
+                            </div>
+
+                            <!-- ESCENA 3: LA SOLUCIÓN -->
+                            <div id="scene-3" class="scene">
+                                <div class="zoom-in">
+                                    <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-400 tracking-tighter">Quartelium<span class="text-white">.</span></h1>
+                                    <p class="text-xl md:text-2xl text-white mt-4 font-light tracking-widest uppercase border-t border-yellow-400 pt-4 inline-block">Logística Inteligente 24/7</p>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 4: CONCILIACIÓN 4 VÍAS -->
+                            <div id="scene-4" class="scene items-start pl-8 pr-8 md:pl-20 md:pr-20">
+                                <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-10 fade-up border-b-4 border-yellow-400 pb-2">Conciliación a 4 Vías</h2>
+                                <div class="w-full max-w-4xl">
+                                    <div class="check-item slide-in-right delay-1s"><span class="check-icon">✓</span> 1. Compra (OC) Integrada</div>
+                                    <div class="check-item slide-in-right delay-2s"><span class="check-icon">✓</span> 2. Despacho (Kit Retrofit)</div>
+                                    <div class="check-item slide-in-right delay-3s"><span class="check-icon">✓</span> 3. Recepción (POD Digital)</div>
+                                    <div class="check-item slide-in-right delay-4s"><span class="check-icon bg-yellow-400 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center text-xl mr-4">✓</span> 4. PAGO AUTOMÁTICO</div>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 5: ROI -->
+                            <div id="scene-5" class="scene"">
+                                <h3 class="text-2xl md:text-4xl text-green-200 font-bold mb-4 fade-up">RESULTADOS EN 90 DÍAS</h3>
+                                <div class="zoom-in delay-1s bg-white/10 backdrop-blur-lg rounded-3xl p-6 md:p-10 border-2 border-green-400">
+                                    <p class="text-lg md:text-2xl text-white mb-2">AHORRE HASTA UN</p>
+                                    <h2 class="text-7xl md:text-9xl font-black text-yellow-400">20%</h2>
+                                    <p class="text-md md:text-xl text-white mt-2">EN COSTOS OPERATIVOS</p>
+                                </div>
+                            </div>
+
+                            <!-- ESCENA 6: CTA FINAL -->
+                            <div id="scene-6" class="scene">
+                                <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 fade-up">No administre su logística. <br><span class="text-yellow-400">Transfórmela.</span></h2>
+
+                                <a href="#roi" class="bg-yellow-400 text-blue-900 text-xl md:text-2xl font-black py-4 md:py-6 px-8 md:px-12 rounded-full shadow-2xl hover:bg-white hover:text-blue-800 transition duration-300 pulse-btn fade-up delay-1s decoration-none">
+                                    CALCULE SU ROI AHORA
+                                </a>
+
+                                <!--<p class="text-gray-400 mt-8 md:mt-12 text-sm fade-up delay-2s">www.quartelium.com</p>-->
+                            </div>
+
+                            <!-- Barra de Progreso -->
+                            <div class="progress-bar"></div>
+
+                            <!-- Botón Replay -->
+                            <button onclick="replayVideo()" class="absolute bottom-4 right-4 z-50 text-white/50 hover:text-white text-sm font-bold uppercase tracking-wider flex items-center gap-2 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                Replay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Sección de Calculadora de ROI (Interactiva) -->
+        <section id="roi" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">
+                    Calcule su Retorno de Inversión (ROI)
+                </h2>
+
+                <div class="grid lg:grid-cols-3 gap-10">
+                    <!-- Controles de Entrada -->
+                    <div class="lg:col-span-1 p-6 bg-blue-50 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-700">Ingrese sus Datos</h3>
+
+                        <div class="mb-4">
+                            <label for="shipments" class="block text-sm font-medium text-gray-700">Misiones/Viajes al Mes:</label>
+                            <input type="number" id="shipments" value="50" min="10" max="1000" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3" oninput="calculateROI()">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="discrepancyRate" class="block text-sm font-medium text-gray-700">Tasa Actual de Discrepancias (en %):</label>
+                            <input type="range" id="discrepancyRate" value="10" min="1" max="50" class="mt-1 block w-full" oninput="calculateROI()">
+                            <p class="text-sm text-gray-500 mt-1"><span id="discrepancyValue">10</span>%</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="avgDisputeCost" class="block text-sm font-medium text-gray-700">Costo Promedio de Resolver una Disputa (USD):</label>
+                            <input type="number" id="avgDisputeCost" value="150" min="10" max="1000" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3" oninput="calculateROI()">
+                        </div>
+                    </div>
+
+                    <!-- Resultados del ROI -->
+                    <div class="lg:col-span-2 p-8 bg-blue-700 rounded-xl shadow-2xl text-white">
+                        <h3 class="text-2xl font-bold mb-6">Resultados de Ahorro Estimado</h3>
+
+                        <div class="grid md:grid-cols-2 gap-6 text-center">
+                            <div class="bg-blue-800 p-6 rounded-lg shadow-xl border-b-4 border-yellow-500 hover:bg-blue-900 transition duration-150">
+                                <p class="text-4xl font-extrabold text-yellow-500" id="currentAnnualCost">$9,000</p>
+                                <p class="text-sm uppercase mt-2 opacity-80">Costo Actual de Disputas (Anual)</p>
+                            </div>
+                            <div class="bg-blue-800 p-6 rounded-lg shadow-xl border-b-4 border-yellow-500 hover:bg-blue-900 transition duration-150">
+                                <p class="text-4xl font-extrabold text-yellow-500" id="quarteliumSavings">$8,100</p>
+                                <p class="text-sm uppercase mt-2 opacity-80">Ahorro Estimado con Quartelium (90%)</p>
+                            </div>
+                        </div>
+
+                        <p class="mt-8 text-lg font-medium bg-blue-600 p-4 rounded-lg">
+                            <span class="font-bold text-yellow-500" id="roiMessage">¡90%</span> de sus disputas se eliminarán gracias a la Conciliación a 4 Vías. Su ROI está garantizado en menos de 6 meses!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sección de Beneficios Clave (Grid) -->
+        <section id="beneficios" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">
+                    Beneficios Clave de la Plataforma
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Tarjeta 1: Conciliación (Hoverable) -->
+                    <div class="benefit-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                        <svg class="w-8 h-8 text-blue-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-5.618 4.016M12 21a9 9 0 005.618-4.016M12 21a9 9 0 01-5.618-4.016M12 21h0"></path></svg>
+                        <h3 class="text-xl font-bold mb-2">Conciliación Total</h3>
+                        <p class="text-gray-600">Automatice la validación entre OC, Despacho, POD y Factura con un 99% de precisión.</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Kit Retrofit -->
+                    <div class="benefit-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                        <svg class="w-8 h-8 text-blue-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <h3 class="text-xl font-bold mb-2">Kit IoT "Plug & Play"</h3>
+                        <p class="text-gray-600">Instalación en 30 minutos. GNSS, cámara y telemetría de grado industrial sin integración compleja.</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Pago Acelerado -->
+                    <div class="benefit-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                        <svg class="w-8 h-8 text-blue-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path></svg>
+                        <h3 class="text-xl font-bold mb-2">Acelere sus Pagos</h3>
+                        <p class="text-gray-600">Reduzca el Ciclo de Pago (DSO) de 30 a 7 días al eliminar la validación manual.</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Transparencia -->
+                    <div class="benefit-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                        <svg class="w-8 h-8 text-blue-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        <h3 class="text-xl font-bold mb-2">Auditoría Transparente</h3>
+                        <p class="text-gray-600">Registro inmutable de cada evento logístico y financiero para auditorías sin fricciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Sección de Testimonios (Carrusel) -->
+        <section class="py-20 bg-blue-700">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-white mb-10">
+                    Resultados directos luego de implementar Quartelium
+                </h2>
+
+                <div class="carousel-container relative">
+                    <!-- Flecha Izquierda -->
+                    <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white/30 p-2 rounded-full z-10 hover:bg-white/50 transition duration-150" onclick="prevSlide()">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+
+                    <!-- Track del Carrusel -->
+                    <div id="carousel-track" class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide flex justify-center">
+                            <blockquote class="text-center text-white">
+                                <p class="text-xl italic mb-4">La carga de trabajo en el área de Finanzas se reduce en un 40%. Se destaca la precisión del POD.</p>
+                                <footer class="font-semibold text-yellow-500">Efectividad del POD</footer>
+                            </blockquote>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide flex justify-center">
+                            <blockquote class="text-center text-white">
+                                <p class="text-xl italic mb-4">El Kit de Retrofit es clave. La instalación es rápida y los datos en tiempo real brindan la transparencia que se necesita en logística.</p>
+                                <footer class="font-semibold text-yellow-500">Efectividad del Kit Retrofit</footer>
+                            </blockquote>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide flex justify-center">
+                            <blockquote class="text-center text-white">
+                                <p class="text-xl italic mb-4">Cumplimiento con la Conciliación a 4 Vías en todas las misiones. Esto fortalece la confianza con los proveedores.</p>
+                                <footer class="font-semibold text-yellow-500">Impacto directo con los Proveedores</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Flecha Derecha -->
+                    <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white/30 p-2 rounded-full z-10 hover:bg-white/50 transition duration-150" onclick="nextSlide()">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <!-- Paginación -->
+                    <div id="carousel-dots" class="flex justify-center mt-6 space-x-2">
+                        <span class="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer" onclick="goToSlide(0)"></span>
+                        <span class="w-3 h-3 bg-white/50 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
+                        <span class="w-3 h-3 bg-white/50 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Formulario de Contacto Interactivo -->
+        <section id="contacto" class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 p-8 rounded-xl shadow-2xl">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+                    ¿Listo para una Prueba Piloto?
+                </h2>
+
+                <!--<form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">-->
+                <form id="contact-form" action="https://formspree.io/f/xjklllrz" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 hover:border-blue-400 transition duration-150">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico de la Empresa</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 hover:border-blue-400 transition duration-150" oninput="validateEmail()">
+                        <p id="email-error" class="text-red-600 text-sm mt-1 hidden">Por favor, ingrese un correo electrónico válido.</p>
+                    </div>
+
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700">Empresa</label>
+                        <input type="text" id="company" name="company" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 hover:border-blue-400 transition duration-150">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje / Pregunta Específica</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 hover:border-blue-400 transition duration-150"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 px-6 bg-blue-700 text-white font-semibold rounded-lg shadow-xl submit-btn-hover transition duration-300">
+                        Solicitar Demo y ROI
+                    </button>
+
+                    <!-- Mensaje de éxito/error del formulario -->
+                    <div id="form-message" class="mt-4 p-4 rounded-lg text-center hidden" role="alert"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. Pie de Página -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+
+            <!-- Logo y Lema -->
+            <div>
+                <h3 class="text-3xl font-extrabold text-white tracking-tight mb-3">Quartelium<span class="text-yellow-500 text-2xl">.</span></h3>
+                <p class="text-gray-400 text-sm">Logística 4.0. Conciliación Garantizada.</p>
+            </div>
+
+            <!-- Enlaces Rápidos -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-yellow-500">Navegación</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#solucion" class="hover:text-white transition duration-150">Solución</a></li>
+                    <li><a href="#roi" class="hover:text-white transition duration-150">ROI</a></li>
+                    <li><a href="#beneficios" class="hover:text-white transition duration-150">Beneficios</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacto -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-yellow-500">Contacto</h4>
+                <p class="text-gray-400">Email: sosamatiasl.dev@gmail.com</p>
+                <p class="text-gray-400">Tel: +54 223 448 9065</p>
+            </div>
+
+            <!-- Redes Sociales (Placeholders SVG) -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-yellow-500">Síganos</h4>
+                <div class="flex space-x-4">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/sosamatiasl" class="text-gray-400 hover:text-blue-400 transition duration-150">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.235-4 0v5.604h-3v-11h3v1.765c1.398-2.544 7-2.721 7 2.281v6.954z" /></svg>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="https://github.com/sosamatiasl" class="text-gray-400 hover:text-white transition duration-150">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center text-gray-500 text-sm">
+            &copy; 2025 Quartelium
+        </div>
+    </footer>
+
+    <script>
+        // =========================================================
+        // SCRIPTS DE INTERACCIÓN GENERAL Y FORMULARIO (Alternativa 1)
+        // =========================================================
+
+        /**
+         * Controla la apertura y cierre del menú de hamburguesa en vista móvil.
+         */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('mobile-overlay');
+            const isOpen = menu.classList.contains('open');
+
+            if (isOpen) {
+                menu.classList.remove('open');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-50', 'pointer-events-auto');
+            } else {
+                menu.classList.add('open');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-50', 'pointer-events-auto');
+            }
+        }
+
+        /**
+         * Validación de formato de correo electrónico en tiempo real.
+         */
+        function validateEmail() {
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-red-500');
+                emailInput.classList.remove('border-gray-300');
+                return false;
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-red-500');
+                emailInput.classList.add('border-gray-300');
+                return true;
+            }
+        }
+
+        /**
+         * Manejador de envío del formulario de contacto.
+         * Muestra mensaje de éxito sin recargar la página.
+         */
+        async function handleFormSubmit(event) {
+            event.preventDefault(); // Evita el envío tradicional del formulario
+            const form = event.target;
+            const formMessage = document.getElementById('form-message');
+
+            if (!validateEmail()) {
+                formMessage.textContent = 'Aún hay errores de validación. Por favor, corrija el email.';
+                formMessage.className = 'mt-4 p-4 rounded-lg text-center bg-red-100 text-red-700';
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Muestra mensaje de carga
+            formMessage.textContent = 'Enviando solicitud...';
+            formMessage.className = 'mt-4 p-4 rounded-lg text-center bg-blue-100 text-blue-700';
+            formMessage.classList.remove('hidden');
+            form.querySelector('button[type="submit"]').disabled = true; // Deshabilita el botón
+
+            try {
+                // Formspree (action) ya apunta al endpoint que reenvía a sosamatiasl.dev@gmail.com
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) { // Éxito en Formspree
+                    formMessage.textContent = '¡Gracias! Su solicitud ha sido enviada. Nos pondremos en contacto a la brevedad.';
+                    formMessage.className = 'mt-4 p-4 rounded-lg text-center bg-green-100 text-green-700';
+
+                    // Limpiar formulario después de un breve retraso
+                    setTimeout(() => {
+                        form.reset();
+                        // Ocultar mensaje después de 5 segundos
+                        setTimeout(() => formMessage.classList.add('hidden'), 5000);
+                    }, 1000);
+
+                } else { // Error en Formspree
+                    const data = await response.json();
+                    let errorMessage = 'Error al enviar la solicitud. Inténtelo más tarde.';
+                    if (data.errors) {
+                        errorMessage = 'Error al enviar: ' + data.errors.map(e => e.message).join(', ');
+                    }
+                    formMessage.textContent = errorMessage;
+                    formMessage.className = 'mt-4 p-4 rounded-lg text-center bg-red-100 text-red-700';
+                }
+
+            } catch (error) {
+                console.error('Network Error:', error);
+                formMessage.textContent = 'Error de red. Asegúrese de tener conexión a Internet.';
+                formMessage.className = 'mt-4 p-4 rounded-lg text-center bg-red-100 text-red-700';
+            } finally {
+                form.querySelector('button[type="submit"]').disabled = false; // Rehabilita el botón
+            }
+        }
+
+        // =========================================================
+        // SCRIPTS DE CÁLCULO DE ROI (Alternativa 1)
+        // =========================================================
+
+        /**
+         * Realiza el cálculo de ROI simple basado en las entradas del usuario.
+         */
+        function calculateROI() {
+            const shipments = parseFloat(document.getElementById('shipments').value) || 0;
+            const discrepancyRate = parseFloat(document.getElementById('discrepancyRate').value) || 0;
+            const avgDisputeCost = parseFloat(document.getElementById('avgDisputeCost').value) || 0;
+
+            document.getElementById('discrepancyValue').textContent = discrepancyRate;
+
+            // Fórmulas de Cálculo:
+            // 1. Número de disputas al mes = Viajes * Tasa de Discrepancia
+            const monthlyDisputes = shipments * (discrepancyRate / 100);
+
+            // 2. Costo actual de disputas (Anual) = Disputas al mes * Costo por disputa * 12 meses
+            const currentAnnualCost = monthlyDisputes * avgDisputeCost * 12;
+
+            // 3. Ahorro con Quartelium: Asumimos una reducción del 90% en disputas (Conservador)
+            const reductionFactor = 0.90;
+            const quarteliumSavings = currentAnnualCost * reductionFactor;
+
+            // Mostrar resultados formateados
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 });
+
+            document.getElementById('currentAnnualCost').textContent = formatter.format(currentAnnualCost);
+            document.getElementById('quarteliumSavings').textContent = formatter.format(quarteliumSavings);
+            document.getElementById('roiMessage').innerHTML = `<span class="font-bold text-yellow-500">${reductionFactor * 100}%</span> de sus disputas se eliminarán gracias a la Conciliación a 4 Vías. Su ahorro anual estimado es de ${formatter.format(quarteliumSavings)}.`;
+        }
+
+        // Ejecutar el cálculo inicial
+        document.addEventListener('DOMContentLoaded', calculateROI);
+
+        // =========================================================
+        // SCRIPTS DE CARRUSEL (Alternativa 1)
+        // =========================================================
+        let currentSlide = 0;
+        let autoAdvanceInterval;
+        const track = document.getElementById('carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        const dots = document.getElementById('carousel-dots').children;
+
+        // Inicia el avance automático del carrusel
+        function startAutoAdvance() {
+            if (autoAdvanceInterval) clearInterval(autoAdvanceInterval);
+            autoAdvanceInterval = setInterval(nextSlide, 5000); // 5 segundos
+        }
+
+        /**
+         * Mueve el carrusel a un índice de slide específico.
+         */
+        function goToSlide(index) {
+            currentSlide = (index + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            track.style.transform = `translateX(${offset}%)`;
+            updateDots();
+            startAutoAdvance(); // Reinicia el avance automático
+        }
+
+        /**
+         * Navega a la siguiente diapositiva.
+         */
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        /**
+         * Navega a la diapositiva anterior.
+         */
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        /**
+         * Actualiza el estado visual de los puntos de paginación.
+         */
+        function updateDots() {
+            Array.from(dots).forEach((dot, index) => {
+                dot.classList.remove('bg-yellow-500');
+                dot.classList.add('bg-white/50');
+                if (index === currentSlide) {
+                    dot.classList.add('bg-yellow-500');
+                    dot.classList.remove('bg-white/50');
+                }
+            });
+        }
+
+        // Implementación de arrastre táctil para dispositivos móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleGesture();
+        });
+
+        /**
+         * Procesa el gesto de deslizamiento (swipe).
+         */
+        function handleGesture() {
+            const threshold = 50; // Mínimo de píxeles para ser considerado swipe
+            if (touchEndX < touchStartX - threshold) {
+                // Swipe a la izquierda (ir a la siguiente)
+                nextSlide();
+            } else if (touchEndX > touchStartX + threshold) {
+                // Swipe a la derecha (ir a la anterior)
+                prevSlide();
+            }
+        }
+
+        // Iniciar el carrusel al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            startAutoAdvance();
+            updateDots();
+        });
+
+        // =========================================================
+        // SCRIPT DE REPLAY PARA EL VIDEO CSS
+        // =========================================================
+
+        function replayVideo() {
+            const container = document.querySelector('.aspect-ratio-wrapper');
+            // Clonar y reemplazar el nodo para reiniciar las animaciones CSS
+            const newContainer = container.cloneNode(true);
+            container.parentNode.replaceChild(newContainer, container);
+        }
+
+    </script>
+</body>
+</html>
